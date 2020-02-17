@@ -7,4 +7,7 @@ cd /workspace
 ./redis-stable/src/redis-server redis-stable/redis.conf &
 
 # Starting Filebeat - This will be our foreground process
-./filebeat/filebeat -e -c filebeat/filebeat.yml
+cd filebeat
+./filebeat setup --pipelines --modules redis
+./filebeat modules enable redis
+./filebeat -e -c filebeat.yml

@@ -17,6 +17,7 @@ curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.0-
 tar xzvf filebeat-7.6.0-linux-x86_64.tar.gz
 
 COPY filebeat.yml /workspace/filebeat-7.6.0-linux-x86_64/
+COPY redis.yml.disabled /workspace/filebeat-7.6.0-linux-x86_64/modules.d/
 COPY run.sh /workspace
 
 RUN chmod ugo+x /workspace/run.sh && \

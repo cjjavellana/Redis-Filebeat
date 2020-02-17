@@ -1,0 +1,8 @@
+- module: redis
+  log:
+    enabled: true
+    var.paths: ["/workspace/logs/*"]
+  slowlog:
+    enabled: true
+    var.hosts: ["localhost:6379"]
+
