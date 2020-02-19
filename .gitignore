@@ -1,1 +1,3 @@
-elasticsearch/*.log
+kibana-logs/*.log
+logstash-logs/*.log
+elasticsearch-logs/*.log
