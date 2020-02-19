@@ -1,5 +1,12 @@
 version: "3.3"
 services:
+  logstash:
+    build: ./logstash
+    volumes:
+      - "./logstash/logstash.yml:/workspace/logstash-7.6.0/config/logstash.yml"
+    ports:
+      - "5054:5054"
+      - "5051:5051"
   redis:
     build: .
     ports:
@@ -8,6 +15,7 @@ services:
     image: sebp/elk
     volumes:
       - "./02-beats-input.conf:/etc/logstash/conf.d/02-beats-input.conf"
+      - "./30-output.conf:/etc/logstash/conf.d/30-output.conf"
     environment:
       - ES_HEAP_SIZE=2g
       - MAX_MAP_COUNT=262144

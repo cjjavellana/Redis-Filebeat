@@ -1,0 +1,8 @@
+# Settings file in YAML
+pipeline:
+  batch:
+    size: 5
+    delay: 5
+node:
+  name: test
+pipeline.workers: 10
