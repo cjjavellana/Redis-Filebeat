@@ -16,12 +16,14 @@ services:
     volumes:
       - "./02-beats-input.conf:/etc/logstash/conf.d/02-beats-input.conf"
       - "./30-output.conf:/etc/logstash/conf.d/30-output.conf"
+      - "./elasticsearch:/var/log/elasticsearch"
     environment:
-      - ES_HEAP_SIZE=2g
+      - ES_HEAP_SIZE=3g
       - MAX_MAP_COUNT=262144
       - ELASTICSEARCH_START=1
       - LOGSTASH_START=1
       - KIBANA_START=1
+      - ES_CONNECT_RETRY=500
     ports:
       - "5601:5601"
       - "9200:9200"

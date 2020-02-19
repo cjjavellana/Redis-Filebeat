@@ -1,0 +1,2 @@
+** Elastic Search Logs will be created in this directory **
+** Please refer to docker-compose.yml for configuration details **
