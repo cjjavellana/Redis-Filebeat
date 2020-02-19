@@ -3,6 +3,10 @@ Send redis logs in container to ELK using filebeat
 
 ## Usage
 
+```Starting all containers
+$ docker-compose up
+```
+
 Starting elk container
 ```bash
 $ docker-compose up -d elk
@@ -11,6 +15,11 @@ $ docker-compose up -d elk
 Starting redis container
 ```bash
 $ docker-compose up -d redis
+```
+
+Starting logstash container
+```bash
+$ docker-compose up -d logstash
 ```
 
 ## Viewing Results
